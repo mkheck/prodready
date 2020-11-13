@@ -1,0 +1,38 @@
+{
+  "groups": [
+    {
+      "name": "aircraft",
+      "type": "com.thehecklers.omakaseaircraftpos.AircraftProperties",
+      "sourceType": "com.thehecklers.omakaseaircraftpos.AircraftProperties"
+    },
+    {
+      "name": "airport",
+      "type": "com.thehecklers.omakaseaircraftpos.AirportProperties",
+      "sourceType": "com.thehecklers.omakaseaircraftpos.OmakaseAircraftPosApplication",
+      "sourceMethod": "airport()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "aircraft.registration",
+      "type": "java.lang.String",
+      "sourceType": "com.thehecklers.omakaseaircraftpos.AircraftProperties"
+    },
+    {
+      "name": "aircraft.type",
+      "type": "java.lang.String",
+      "sourceType": "com.thehecklers.omakaseaircraftpos.AircraftProperties"
+    },
+    {
+      "name": "airport.icao-code",
+      "type": "java.lang.String",
+      "sourceType": "com.thehecklers.omakaseaircraftpos.AirportProperties"
+    },
+    {
+      "name": "airport.name",
+      "type": "java.lang.String",
+      "sourceType": "com.thehecklers.omakaseaircraftpos.AirportProperties"
+    }
+  ],
+  "hints": []
+}
