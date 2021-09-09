@@ -24,6 +24,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 
 import java.time.Duration;
+import java.time.Instant;
 
 @ConfigurationPropertiesScan
 @SpringBootApplication
@@ -46,7 +47,7 @@ public class OmakaseAircraftPosApplication {
 
     @Bean
     RSocketRequester requester(RSocketRequester.Builder builder) {
-        return builder.connectTcp("localhost", 7635).block();
+        return builder.tcp("localhost", 7635);
     }
 }
 
@@ -108,6 +109,7 @@ class PositionController {
     @GetMapping(value = "/rsstream", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     Flux<Aircraft> getRSStream() {
         return requester.route("acstream")
+                .data(Instant.now())
                 .retrieveFlux(Aircraft.class)
                 .onBackpressureDrop()
                 .take(10)
